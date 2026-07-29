@@ -1,0 +1,600 @@
+:root {
+    --bg-dark: #0f0718;
+    --bg-mid: #24113d;
+    --bg-light: #6d3fa8;
+    --text-main: #f5ebff;
+    --text-soft: #cbb9e4;
+    --accent: #b388ff;
+    --accent-2: #7c4dff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-mid) 45%, var(--bg-light) 100%);
+    color: var(--text-main);
+}
+
+header {
+    padding: 20px 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin: 20px auto;
+    width: fit-content;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    padding: 12px 20px;
+    font-size: 17px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #fff;
+    box-shadow: 0 0 12px rgba(179, 136, 255, 0.4);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 40px 40px;
+}
+
+.perkenalan {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.perkenalan h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.perkenalan p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+}
+
+.foto {
+    display: flex;
+    justify-content: center;
+}
+
+.foto img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 16px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        padding: 30px 16px;
+    }
+
+    .perkenalan {
+        padding: 24px;
+    }
+
+    .foto img {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+body.halaman-Profil {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-mid) 45%, var(--bg-light) 100%);
+    color: var(--text-main);
+    overflow-x: hidden;
+    position: relative;
+}
+
+body.halaman-Profil::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(179, 136, 255, 0.2), transparent 28%),
+                radial-gradient(circle at bottom right, rgba(124, 77, 255, 0.2), transparent 30%);
+    pointer-events: none;
+}
+
+body.halaman-Profil header {
+    position: relative;
+    z-index: 1;
+    padding: 30px 24px 60px;
+}
+
+body.halaman-Profil h1 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 30px 0 10px;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.halaman-Profil header > p {
+    text-align: center;
+    font-size: 1.08rem;
+    color: var(--text-soft);
+    margin-bottom: 30px;
+    letter-spacing: 0.04em;
+}
+
+body.halaman-Profil .info,
+body.halaman-Profil .tentang {
+    max-width: 820px;
+    margin: 0 auto 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 24px 28px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+body.halaman-Profil .info p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+body.halaman-Profil .tentang h2 {
+    margin-bottom: 14px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+body.halaman-Profil .tentang p {
+    line-height: 1.8;
+    color: var(--text-soft);
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    body.halaman-Profil header {
+        padding: 20px 16px 40px;
+    }
+
+    body.halaman-Profil .menu ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    body.halaman-Profil .info,
+    body.halaman-Profil .tentang {
+        padding: 20px;
+        border-radius: 18px;
+    }
+}
+
+body.kontak-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-mid) 45%, var(--bg-light) 100%);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+body.kontak-page header {
+    padding: 30px 24px 60px;
+}
+
+body.kontak-page .kontak-wrapper {
+    max-width: 840px;
+    margin: 24px auto 0;
+    padding: 30px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+body.kontak-page h1 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+body.kontak-page .subjudul {
+    text-align: center;
+    color: var(--text-soft);
+    margin-bottom: 24px;
+}
+
+body.kontak-page .kontak-list {
+    display: grid;
+    gap: 14px;
+}
+
+body.kontak-page .kontak-item,
+body.kontak-page .Kontak-item {
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+body.kontak-page .kontak-item:hover,
+body.kontak-page .Kontak-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+body.kontak-page .kontak-item strong,
+body.kontak-page .Kontak-item strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+body.kontak-page .kontak-item a,
+body.kontak-page .Kontak-item a {
+    color: var(--text-main);
+    text-decoration: none;
+    word-break: break-word;
+}
+
+body.kontak-page .kontak-item a:hover,
+body.kontak-page .Kontak-item a:hover {
+    color: var(--accent);
+}
+
+body.kontak-page .kontak-item p,
+body.kontak-page .Kontak-item p {
+    margin: 0;
+    color: var(--text-soft);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    body.kontak-page header {
+        padding: 20px 16px 40px;
+    }
+
+    body.kontak-page .kontak-wrapper {
+        padding: 20px;
+        border-radius: 18px;
+    }
+}
+
+body.halaman-Pengalaman{
+    min-height:100vh;
+    background:linear-gradient(135deg,var(--bg-dark) 0%,var(--bg-mid) 45%,var(--bg-light) 100%);
+    color:var(--text-main);
+    overflow-x:hidden;
+    position:relative;
+}
+
+body.halaman-Pengalaman::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,rgba(179,136,255,.18),transparent 30%),
+    radial-gradient(circle at bottom right,rgba(124,77,255,.18),transparent 30%);
+    pointer-events:none;
+}
+
+body.halaman-Pengalaman header{
+    position:relative;
+    z-index:2;
+}
+
+.pengalaman{
+    position:relative;
+    z-index:2;
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.pengalaman h1{
+    text-align:center;
+    font-size:2.6rem;
+    margin-bottom:40px;
+    color:#fff;
+    text-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.pengalaman{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.pengalaman h1{
+    grid-column:1/-1;
+}
+
+.skill{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:22px;
+    padding:25px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
+    transition:.35s;
+    text-align:center;
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(124,77,255,.35);
+    border:1px solid rgba(179,136,255,.35);
+}
+
+.skill img{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+    margin-bottom:18px;
+}
+
+.skill span{
+    display:block;
+    font-size:1.1rem;
+    font-weight:600;
+    color:#fff;
+}
+
+@media(max-width:768px){
+
+    .pengalaman{
+        grid-template-columns:1fr;
+        padding:15px;
+    }
+
+    .pengalaman h1{
+        font-size:2rem;
+    }
+
+    .skill img{
+        width:90px;
+        height:90px;
+    }
+
+}
+
+/* ===========================================
+   ANIMASI TAMBAHAN
+   =========================================== */
+
+/* Background bergerak perlahan */
+body{
+    background-size:300% 300%;
+    animation:gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Navbar muncul dari atas */
+.navbar{
+    animation:navbarMasuk .8s ease;
+}
+
+@keyframes navbarMasuk{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Card muncul dengan animasi */
+.perkenalan,
+.info,
+.tentang,
+.skill,
+.kontak-wrapper{
+
+    animation:muncul .8s ease;
+
+}
+
+@keyframes muncul{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* Foto profil bernapas */
+.foto img{
+
+    animation:nafas 4s ease-in-out infinite;
+
+}
+
+@keyframes nafas{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* Judul menyala */
+h1{
+
+    animation:glow 3s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 8px #7c4dff;
+    }
+
+    to{
+        text-shadow:0 0 25px #b388ff;
+    }
+
+}
+
+/* Hover menu */
+.menu ul li a{
+
+    transition:.35s;
+
+}
+
+.menu ul li a:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+}
+
+/* Hover card */
+.skill,
+.perkenalan,
+.info,
+.tentang,
+.kontak-wrapper{
+
+    transition:.4s;
+
+}
+
+.skill:hover,
+.perkenalan:hover,
+.info:hover,
+.tentang:hover,
+.kontak-wrapper:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 15px 40px rgba(179,136,255,.35);
+
+}
+
+/* Hover logo */
+.skill img{
+
+    transition:.5s;
+
+}
+
+.skill:hover img{
+
+    transform:rotate(10deg) scale(1.15);
+
+}
+
+/* Animasi garis bawah menu */
+.menu ul li a{
+
+    position:relative;
+
+}
+
+.menu ul li a::after{
+
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:5px;
+    width:0;
+    height:2px;
+    background:#fff;
+    transition:.4s;
+
+}
+
+.menu ul li a:hover::after{
+
+    width:70%;
+    left:15%;
+
+}
+
+/* Scroll lebih halus */
+html{
+
+    scroll-behavior:smooth;
+
+}
