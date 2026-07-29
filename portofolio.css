@@ -202,6 +202,90 @@ body.halaman-Profil .tentang p {
     font-size: 1rem;
 }
 
+body.halaman-Profil .profil {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    position: relative;
+    z-index: 1;
+}
+
+body.halaman-Profil .profil > h1 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 16px;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.halaman-Profil .deskripsi {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    text-align: center;
+    line-height: 1.8;
+    color: var(--text-soft);
+    font-size: 1.04rem;
+}
+
+body.halaman-Profil .box {
+    margin-bottom: 24px;
+    padding: 24px 28px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+body.halaman-Profil .box h2 {
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+body.halaman-Profil .card {
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.halaman-Profil .card:last-child {
+    margin-bottom: 0;
+}
+
+body.halaman-Profil .card h3 {
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 1.06rem;
+}
+
+body.halaman-Profil .card p,
+body.halaman-Profil .card li,
+body.halaman-Profil .card small {
+    color: var(--text-soft);
+    line-height: 1.7;
+}
+
+body.halaman-Profil .card strong {
+    color: var(--text-main);
+}
+
+body.halaman-Profil .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+body.halaman-Profil .card li::before {
+    content: "•";
+    color: var(--accent);
+    margin-right: 8px;
+}
+
 @media (max-width: 768px) {
     body.halaman-Profil header {
         padding: 20px 16px 40px;
