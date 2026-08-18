@@ -684,20 +684,48 @@ html{
 }
 
 /* Repostori di hp */
-@media(max-width:768px){
+@media (max-width: 768px) {
 
-    .skill img{
-
-        width:80px;
-        height:80px;
-
+    body {
+        overflow-x: hidden;
     }
 
-    .skill span{
-
-        font-size:1rem;
-
+    .navbar {
+        padding: 15px;
     }
 
+    .menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .menu a {
+        font-size: 15px;
+    }
+
+    .perkenalan {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .perkenalan h1 {
+        font-size: 30px;
+    }
+
+    .perkenalan p {
+        font-size: 16px;
+    }
+
+    .foto img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    .skill {
+        width: 90%;
+        margin: 15px auto;
+    }
 }
-
