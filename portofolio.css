@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
+/* Variabel warna dan efek utama agar mudah diubah dari satu tempat. */
 :root {
     --ink: #eef4f2;
     --muted: #a9bbb8;
@@ -12,6 +13,7 @@
     --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
 }
 
+/* Reset ukuran elemen dan pengaturan dasar halaman. */
 * {
     box-sizing: border-box;
 }
@@ -32,6 +34,7 @@ body {
         var(--background);
 }
 
+    /* Pola garis tipis sebagai dekorasi latar belakang halaman. */
 body::before {
     position: fixed;
     inset: 0;
@@ -44,6 +47,7 @@ body::before {
     pointer-events: none;
 }
 
+/* Area navigasi bagian atas halaman. */
 header {
     position: relative;
     z-index: 2;
@@ -52,6 +56,7 @@ header {
     padding: 24px 0;
 }
 
+/* Kotak navigasi dengan efek transparan dan blur. */
 .navbar {
     display: flex;
     align-items: center;
@@ -65,6 +70,7 @@ header {
     backdrop-filter: blur(18px);
 }
 
+/* Nama/logo yang dibuat menggunakan pseudo-element. */
 .login::before {
     color: var(--accent);
     content: 'BAYU.';
@@ -78,6 +84,7 @@ header {
     display: none;
 }
 
+/* Daftar menu dan tampilan setiap link navigasi. */
 .menu,
 .menu ul {
     display: flex;
@@ -107,6 +114,7 @@ header {
     background: rgba(117, 224, 195, 0.1);
 }
 
+/* Gaya umum untuk semua judul. */
 h1,
 h2,
 h3 {
@@ -125,6 +133,7 @@ h2 {
     font-size: clamp(1.35rem, 2.5vw, 1.9rem);
 }
 
+/* Lebar konten utama agar rapi dan berada di tengah halaman. */
 main,
 .pengalaman,
 .kontak-wrapper {
@@ -132,6 +141,7 @@ main,
     margin: 0 auto;
 }
 
+/* Bagian pembuka atau hero pada halaman utama. */
 .perkenalan {
     max-width: 780px;
     padding: 13vh 0 60px;
@@ -154,6 +164,7 @@ main,
     font-size: 1.08rem;
 }
 
+/* Foto profil yang berada di sisi kanan pada layar besar. */
 .foto {
     position: absolute;
     top: 21vh;
@@ -175,6 +186,7 @@ main,
     object-fit: cover;
 }
 
+/* Jarak dan judul untuk bagian profil, pengalaman, dan kontak. */
 .profil,
 .pengalaman,
 .kontak-wrapper {
@@ -188,6 +200,7 @@ main,
     font-size: clamp(2.5rem, 6vw, 4.6rem);
 }
 
+/* Kotak pembungkus isi profil. */
 .box {
     margin-top: 38px;
     padding: 26px;
@@ -204,6 +217,7 @@ main,
     margin-bottom: 20px;
 }
 
+/* Kartu informasi di dalam bagian profil. */
 .card,
 .kontak-item {
     margin-top: 14px;
@@ -233,6 +247,7 @@ main,
     color: var(--muted);
 }
 
+/* Grid kartu pengalaman atau skill. */
 .pengalaman {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -243,6 +258,7 @@ main,
     grid-column: 1 / -1;
 }
 
+/* Kartu skill dengan efek naik saat kursor diarahkan ke kartu. */
 .skill {
     overflow: hidden;
     min-height: 220px;
@@ -265,6 +281,7 @@ main,
     object-fit: cover;
 }
 
+/* Daftar informasi kontak dalam dua kolom. */
 .kontak-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -298,6 +315,7 @@ main,
     color: var(--muted);
 }
 
+/* Penyesuaian tampilan untuk layar tablet dan ponsel. */
 @media (max-width: 760px) {
     header,
     main,
