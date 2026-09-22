@@ -34,7 +34,7 @@ body {
         var(--background);
 }
 
-    /* Pola garis tipis sebagai dekorasi latar belakang halaman. */
+/* Pola garis tipis sebagai dekorasi latar belakang halaman. */
 body::before {
     position: fixed;
     inset: 0;
@@ -112,6 +112,12 @@ header {
     border-color: rgba(117, 224, 195, 0.24);
     color: var(--accent);
     background: rgba(117, 224, 195, 0.1);
+}
+
+.menu a:focus-visible,
+.kontak-item a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
 /* Gaya umum untuk semua judul. */
@@ -315,6 +321,110 @@ main,
     color: var(--muted);
 }
 
+/* Styling khusus halaman project */
+.project {
+    display: grid;
+    grid-template-columns: minmax(0, 820px);
+    justify-content: center;
+    width: min(100% - 40px, 1120px);
+    margin: 0 auto;
+    padding: 30px 0 80px;
+}
+
+.project-page {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 80px 0 100px;
+}
+
+.project-page h1 {
+    margin-bottom: 10px;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+}
+
+.project-page > p {
+    max-width: 720px;
+    margin-bottom: 32px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.project-item {
+    overflow: hidden;
+    width: 100%;
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(14, 29, 33, 0.72);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-item:hover {
+    border-color: rgba(117, 224, 195, 0.52);
+    transform: translateY(-6px);
+}
+
+.project-item img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.project-item h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+
+.project-item p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.project-item ul {
+    margin: 16px 0 0;
+    padding-left: 18px;
+}
+
+.project-item li {
+    margin: 6px 0;
+    color: var(--muted);
+}
+
+.project-content {
+    padding: 22px 22px 18px;
+}
+
+.project-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.project-content p,
+.project-content li {
+    color: var(--muted);
+}
+
+.project-content ul {
+    margin: 12px 0 0;
+    padding-left: 18px;
+}
+
+.project-content li {
+    margin: 6px 0;
+}
+
 /* Penyesuaian tampilan untuk layar tablet dan ponsel. */
 @media (max-width: 760px) {
     header,
@@ -364,7 +474,8 @@ main,
     }
 
     .pengalaman,
-    .kontak-list {
+    .kontak-list,
+    .project-grid {
         grid-template-columns: 1fr;
     }
 }
