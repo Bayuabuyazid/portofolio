@@ -381,14 +381,23 @@ main,
 /* Daftar informasi kontak dalam dua kolom. */
 .kontak-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    max-width: 850px;
-    margin-top: 38px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 900px;
+    margin-top: 34px;
 }
 
 .kontak-item {
+    min-width: 0;
     margin: 0;
+    padding: 22px 24px;
+    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.kontak-item:hover {
+    border-color: rgba(117, 224, 195, 0.42);
+    background: rgba(49, 50, 53, 0.94);
+    transform: translateY(-3px);
 }
 
 .kontak-item strong,
@@ -396,11 +405,18 @@ main,
     display: block;
 }
 
+.kontak-item strong {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
 .kontak-item a {
-    margin-top: 5px;
     color: var(--ink);
     text-decoration-color: rgba(117, 224, 195, 0.45);
     text-underline-offset: 4px;
+    overflow-wrap: anywhere;
 }
 
 .kontak-item a:hover {
@@ -408,7 +424,7 @@ main,
 }
 
 .kontak-item p {
-    margin-bottom: 0;
+    margin: 5px 0 0;
     color: var(--muted);
 }
 
