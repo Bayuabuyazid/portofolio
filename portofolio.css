@@ -303,15 +303,92 @@ main,
     padding: 26px;
     border: 1px solid var(--line);
     border-radius: 18px;
-    background: rgba(14, 29, 33, 0.66);
+    background: rgba(31, 32, 35, 0.78);
     box-shadow: var(--shadow);
+}
+
+.profil > .box {
+    padding: clamp(20px, 3vw, 30px);
 }
 
 .box h2 {
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
+}
+
+.profil .card {
+    margin-top: 14px;
+    background: rgba(49, 50, 53, 0.72);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.profil .card:hover {
+    border-color: rgba(117, 224, 195, 0.32);
+    background: rgba(55, 56, 59, 0.88);
+}
+
+.biodata-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 14px;
+}
+
+.profil .biodata-grid p {
+    min-width: 0;
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.profil .biodata-grid strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--accent);
+}
+
+.riwayat-pendidikan {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.riwayat-pendidikan h2 {
+    grid-column: 1 / -1;
+}
+
+.profil .riwayat-pendidikan .card {
+    margin: 0;
+}
+
+.profil .riwayat-pendidikan .card h3 {
+    margin: 0 0 10px;
+}
+
+.profil .riwayat-pendidikan .card p {
+    margin: 0 0 8px;
+    color: var(--muted);
+}
+
+.profil .riwayat-pendidikan .card small {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(117, 224, 195, 0.1);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.profil .card ul {
+    padding-left: 22px;
+}
+
+.profil .card li::marker {
+    color: var(--accent);
 }
 
 /* Kartu informasi di dalam bagian profil. */
@@ -597,6 +674,15 @@ body.halaman-Project {
     .kontak-list,
     .project-grid {
         grid-template-columns: 1fr;
+    }
+
+    .biodata-grid,
+    .riwayat-pendidikan {
+        grid-template-columns: 1fr;
+    }
+
+    .riwayat-pendidikan h2 {
+        grid-column: auto;
     }
 
     .project-page {
