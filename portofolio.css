@@ -4,12 +4,12 @@
 :root {
     --ink: #eef4f2;
     --muted: #a9bbb8;
-    --surface: rgba(19, 35, 40, 0.82);
-    --surface-light: rgba(32, 54, 59, 0.72);
-    --line: rgba(173, 221, 211, 0.16);
+    --surface: rgba(35, 36, 38, 0.88);
+    --surface-light: rgba(49, 50, 53, 0.78);
+    --line: rgba(210, 212, 216, 0.16);
     --accent: #75e0c3;
     --accent-warm: #ffad7a;
-    --background: #081417;
+    --background: #111214;
     --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
 }
 
@@ -29,8 +29,8 @@ body {
     font-family: 'DM Sans', 'Segoe UI', sans-serif;
     line-height: 1.7;
     background:
-        radial-gradient(circle at 12% 8%, rgba(117, 224, 195, 0.13), transparent 30rem),
-        radial-gradient(circle at 88% 88%, rgba(255, 173, 122, 0.1), transparent 28rem),
+        radial-gradient(circle at 12% 8%, rgba(145, 147, 151, 0.12), transparent 30rem),
+        radial-gradient(circle at 88% 88%, rgba(78, 80, 84, 0.16), transparent 28rem),
         var(--background);
 }
 
@@ -65,7 +65,7 @@ header {
     padding: 8px 10px 8px 22px;
     border: 1px solid var(--line);
     border-radius: 18px;
-    background: rgba(8, 20, 23, 0.68);
+    background: rgba(18, 19, 21, 0.82);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
     backdrop-filter: blur(18px);
 }
@@ -339,60 +339,65 @@ body.halaman-Project {
 }
 
 .project-page {
-    width: min(1120px, calc(100% - 40px));
+    width: min(1120px, calc(100% - 48px));
     margin: 0 auto;
-    padding: 60px 0 100px;
+    padding: clamp(48px, 8vw, 88px) 0 100px;
 }
 
 .project-page h1 {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     font-size: clamp(2.5rem, 6vw, 4.6rem);
     letter-spacing: -0.04em;
 }
 
 .project-page > p {
     max-width: 720px;
-    margin-bottom: 32px;
+    margin-bottom: 42px;
     color: var(--muted);
-    font-size: 1.05rem;
+    font-size: clamp(1rem, 1.7vw, 1.12rem);
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    align-items: stretch;
+    gap: 28px;
 }
 
 .project-item {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    width: 100%;
-    padding: 26px;
+    min-width: 0;
     border: 1px solid var(--line);
-    border-radius: 14px;
-    background: rgba(14, 29, 33, 0.72);
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border-radius: 20px;
+    background: linear-gradient(155deg, rgba(25, 45, 49, 0.94), rgba(12, 27, 31, 0.92));
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-item:hover {
-    border-color: rgba(117, 224, 195, 0.52);
-    transform: translateY(-6px);
+    border-color: rgba(117, 224, 195, 0.42);
+    box-shadow: 0 24px 58px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
 }
 
 .project-item img {
     display: block;
     width: 100%;
-    height: 350px;
-    margin-bottom: 22px;
-    border-radius: 10px;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     border-bottom: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.03);
+    background: linear-gradient(135deg, rgba(117, 224, 195, 0.12), rgba(255, 173, 122, 0.08));
+}
+
+.project-item img[src=""] {
+    display: none;
 }
 
 .project-item h3 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
+    margin: 0 0 12px;
+    font-size: 1.4rem;
 }
 
 .project-item p {
@@ -400,23 +405,9 @@ body.halaman-Project {
     color: var(--muted);
 }
 
-.project-item ul {
-    margin: 16px 0 0;
-    padding-left: 18px;
-}
-
-.project-item li {
-    margin: 6px 0;
-    color: var(--muted);
-}
-
 .project-content {
-    padding: 22px 22px 18px;
-}
-
-.project-content h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+    flex: 1;
+    padding: 24px;
 }
 
 .project-content p,
@@ -425,12 +416,27 @@ body.halaman-Project {
 }
 
 .project-content ul {
-    margin: 12px 0 0;
-    padding-left: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
 }
 
 .project-content li {
-    margin: 6px 0;
+    margin: 0;
+    padding: 5px 11px;
+    border: 1px solid rgba(117, 224, 195, 0.18);
+    border-radius: 999px;
+    background: rgba(117, 224, 195, 0.08);
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.project-content li:empty {
+    display: none;
 }
 
 /* Penyesuaian tampilan untuk layar tablet dan ponsel. */
@@ -485,5 +491,18 @@ body.halaman-Project {
     .kontak-list,
     .project-grid {
         grid-template-columns: 1fr;
+    }
+
+    .project-page {
+        width: min(100% - 28px, 600px);
+        padding-top: 48px;
+    }
+
+    .project-page > p {
+        margin-bottom: 30px;
+    }
+
+    .project-content {
+        padding: 20px;
     }
 }

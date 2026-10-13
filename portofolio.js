@@ -6,12 +6,16 @@ const sections = Array.from(document.querySelectorAll('.perkenalan, .foto, .info
 const skillCards = Array.from(document.querySelectorAll('.skill'));
 
 function setActiveNavLink() {
-  const currentFile = window.location.pathname.split('/').pop().toLowerCase();
+  const currentFile = window.location.pathname.split('/').pop().trim().toLowerCase();
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    const targetFile = href.split('/').pop().toLowerCase();
-    if (targetFile === currentFile || (!currentFile && targetFile.includes('porfolio'))) {
+
+    const targetFile = href.trim().split('/').pop().trim().toLowerCase();
+    const isCurrentPage = targetFile === currentFile ||
+      (!currentFile && targetFile === 'index.html');
+
+    if (isCurrentPage) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
